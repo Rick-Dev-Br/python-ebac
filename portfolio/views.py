@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import render
 
 
@@ -49,3 +50,7 @@ def home(request):
         },
     }
     return render(request, "portfolio/home.html", context)
+
+
+def post(request):
+    return HttpResponse("Hello World")
