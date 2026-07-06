@@ -49,7 +49,7 @@ def home(request):
             "linkedin": "https://www.linkedin.com/",
         },
     }
-    return render(request, "portfolio/home.html", context)
+    return render(request, "portfolio/index.html", context)
 
 
 def post(request):
