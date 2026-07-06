@@ -1,0 +1,37 @@
+{% extends "portfolio/base.html" %}
+
+{% block title %}{{ profile.name }} | Portfolio{% endblock %}
+
+{% block content %}
+    <section>
+        <h2>{{ profile.name }}</h2>
+        <p><strong>{{ profile.role }}</strong></p>
+        <p>{{ profile.summary }}</p>
+    </section>
+
+    <section>
+        <h2>Habilidades</h2>
+        <ul>
+            {% for skill in skills %}
+                <li>{{ skill }}</li>
+            {% endfor %}
+        </ul>
+    </section>
+
+    <section>
+        <h2>Projetos</h2>
+        {% for project in projects %}
+            <article>
+                <h3>{{ project.title }}</h3>
+                <p>{{ project.description }}</p>
+            </article>
+        {% endfor %}
+    </section>
+
+    <section>
+        <h2>Contato</h2>
+        <p>{{ contact.email }}</p>
+        <p><a href="{{ contact.github }}">GitHub</a></p>
+        <p><a href="{{ contact.linkedin }}">LinkedIn</a></p>
+    </section>
+{% endblock %}
